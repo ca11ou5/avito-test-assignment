@@ -1,23 +1,22 @@
 package http
 
-import (
-	"net/http"
+import "git.codenrock.com/avito-testirovanie-na-backend-1270/cnrprod1725737622-team-78771/internal/entity"
 
-	"github.com/gin-gonic/gin"
-)
+type TenderService interface {
+	CreateTender(tender *entity.Tender) (*entity.Tender, error)
+}
 
-type Service interface{}
+type BidService interface {
+}
 
 type Controller struct {
-	Service
+	TenderService
+	BidService
 }
 
-func NewController(svc Service) *Controller {
+func NewController(tenderSvc TenderService, bidSvc BidService) *Controller {
 	return &Controller{
-		Service: svc,
+		TenderService: tenderSvc,
+		BidService:    bidSvc,
 	}
-}
-
-func (c *Controller) ping(ctx *gin.Context) {
-	ctx.Status(http.StatusOK)
 }

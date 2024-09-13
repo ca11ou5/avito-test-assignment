@@ -11,7 +11,7 @@ import (
 	"git.codenrock.com/avito-testirovanie-na-backend-1270/cnrprod1725737622-team-78771/config"
 )
 
-func connectToPostgres(cfg *config.Config) *sqlx.DB {
+func GetDBInstance(cfg *config.Config) *sqlx.DB {
 	dsn := createDSN(cfg)
 
 	db, err := sqlx.Connect("postgres", dsn)

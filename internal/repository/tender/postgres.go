@@ -1,19 +1,18 @@
-package tender
+package tender_repo
 
 import (
-	"github.com/jmoiron/sqlx"
-
 	"git.codenrock.com/avito-testirovanie-na-backend-1270/cnrprod1725737622-team-78771/internal/entity"
+	"github.com/jmoiron/sqlx"
 )
 
-type Client struct {
+type Repository struct {
 	pg *sqlx.DB
 }
 
-func NewClient(db *sqlx.DB) *Client {
-	return &Client{pg: db}
+func New(pg *sqlx.DB) *Repository {
+	return &Repository{
+		pg: pg,
+	}
 }
 
-func (c *Client) InsertTender(tender *entity.Tender) (*entity.Tender, error) {
-	return nil, nil
-}
+func (r *Repository) SaveTender(tender *entity.Tender) (*entity.Tender, error) {}

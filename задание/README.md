@@ -324,7 +324,7 @@ Response:
 - **Ожидаемый результат:** Статус код 200 и данные созданного предложения.
 
 ```yaml
-POST /api/bids/new
+POST /api/bid/new
 
 Request Body:
 
@@ -363,7 +363,7 @@ Response:
 - **Ожидаемый результат:** Статус код 200 и список предложений пользователя.
 
 ```yaml
-GET /api/bids/my?username=user1
+GET /api/bid/my?username=user1
 
 Response:
 
@@ -373,12 +373,12 @@ Response:
   ```
   
 #### Получение списка предложений для тендера
-- **Эндпоинт:** GET /bids/{tenderId}/list
+- **Эндпоинт:** GET /bid/{tenderId}/list
 - **Описание:** Возвращает предложения, связанные с указанным тендером.
 - **Ожидаемый результат:** Статус код 200 и список предложений для тендера.
 
 ```yaml
-GET /api/bids/1/list
+GET /api/bid/1/list
 
 Response:
 
@@ -388,12 +388,12 @@ Response:
   ```
   
 #### Редактирование предложения
-- **Эндпоинт:** PATCH /bids/{bidId}/edit
+- **Эндпоинт:** PATCH /bid/{bidId}/edit
 - **Описание:** Редактирование существующего предложения.
 - **Ожидаемый результат:** Статус код 200 и обновленные данные предложения.
 
 ```yaml
-PATCH /api/bids/1/edit
+PATCH /api/bid/1/edit
 
 Request Body:
 
@@ -424,7 +424,7 @@ Response:
 - **Ожидаемый результат:** Статус код 200 и данные предложения на указанной версии.
 
 ```yaml
-PUT /api/bids/1/rollback/2
+PUT /api/bid/1/rollback/2
 
 Response:
 
@@ -445,7 +445,7 @@ Response:
 - **Ожидаемый результат:** Статус код 200 и список отзывов на предложения указанного автора.
 
 ```yaml
-GET /api/bids/1/reviews?authorUsername=user2&organizationId=1
+GET /api/bid/1/reviews?authorUsername=user2&organizationId=1
 
 Response:
 
